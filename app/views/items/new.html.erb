@@ -1,0 +1,11 @@
+<%= simple_form_for @item do |f| %>
+  <%= f.input :item %>
+  <%= f.button :submit, "TODO" %>
+<% end %>
+
+<ul>
+  <% @items.each do |item| %>
+   <li><%= "#{item.item} | #{item.created_at}" %></li>
+  <% end %>
+</ul>
+
