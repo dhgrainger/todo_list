@@ -1,11 +1,25 @@
-<%= simple_form_for @item do |f| %>
-  <%= f.input :item %>
-  <%= f.button :submit, "TODO" %>
-<% end %>
+<div class = "row">
+    <div class = "large-centered large-8 columns">
 
-<ul>
-  <% @items.each do |item| %>
-   <li><%= "#{item.item} | #{item.created_at}" %></li>
-  <% end %>
-</ul>
+    <%= simple_form_for @item do |f| %>
+      <%= f.input :item %>
+      <%= f.button :submit, "TODO" %>
+    <% end %>
 
+
+    <ul>
+      <% @items.each do |item| %>
+        <li>
+          <a href="#" data-options="align:right;is_hover:true" data-dropdown="hover3">
+            <%= "#{item.created_at.strftime('%a')} | #{item.item}" %>
+          </a>
+            <ul id="hover3" class="f-dropdown" data-dropdown-content>
+              <li>Some thing</li>
+              <li>Something Else</li>
+              <li>More of the Same</li>
+            </ul>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
