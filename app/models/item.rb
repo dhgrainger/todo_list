@@ -1,3 +1,3 @@
 class Item < ActiveRecord::Base
-  STATES = ("MA", "RI")
+  has_many :milestones
 end
