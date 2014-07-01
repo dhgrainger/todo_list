@@ -1,6 +1,8 @@
 TodoList::Application.routes.draw do
 
-  resources :items
+  resources :items do
+    resources :milestones
+  end
 
   root to: "items#new"
 
